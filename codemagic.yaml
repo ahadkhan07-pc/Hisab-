@@ -9,7 +9,7 @@ workflows:
       node: 22
 
     scripts:
-            - name: Install dependencies
+      - name: Install dependencies
         script: |
           rm -f package-lock.json
           npm install --include=optional
