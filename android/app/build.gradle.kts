@@ -13,12 +13,13 @@ android {
 
     defaultConfig {
         applicationId = "com.mydailyhisab.app"
-        minSdk = 29 // Android 10+
-        targetSdk = 35 // Android 15/16 (e.g. Redmi Note 14 Pro)
+        minSdk = 29
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
         vectorDrawables {
             useSupportLibrary = true
         }
@@ -32,14 +33,16 @@ android {
         release {
             isMinifyEnabled = true
             isShrinkResources = true
+
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+
             signingConfig = signingConfigs.getByName("debug")
         }
+
         debug {
-    
             isDebuggable = true
         }
     }
@@ -74,7 +77,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.androidx.activity.compose)
-    
+
     // Compose UI
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.ui.graphics)
@@ -88,10 +91,10 @@ dependencies {
     implementation(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
 
-    // Jetpack DataStore Preferences (Permanent Light/Dark Theme Storage)
+    // Jetpack DataStore
     implementation(libs.androidx.datastore.preferences)
 
-    // Firebase (Auth, Firestore, Storage)
+    // Firebase
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.auth.ktx)
     implementation(libs.firebase.firestore.ktx)
@@ -101,8 +104,9 @@ dependencies {
     implementation(libs.androidx.credentials)
     implementation(libs.androidx.credentials.play.services.auth)
     implementation(libs.google.play.services.auth)
+    implementation(libs.googleid)
 
-    // Image loading with Coil
+    // Image loading
     implementation(libs.coil.compose)
 
     // Serialization & JSON Backup
@@ -114,5 +118,4 @@ dependencies {
 
     // Debugging
     debugImplementation(libs.androidx.compose.ui.tooling)
-    
 }
