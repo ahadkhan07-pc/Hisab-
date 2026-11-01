@@ -3,7 +3,7 @@ workflows:
   my-daily-hisab:
     name: My Daily Hisab APK
     max_build_duration: 120
-    instance_type: mac_mini
+    instance_type: mac_mini_m2
 
     environment:
       node: 22
